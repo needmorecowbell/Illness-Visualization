@@ -33,7 +33,7 @@ public class Driver {
 		f.setTitle("Illness Visualization");
 		f.setSize(mapWidth,mapHeight);
 		f.setVisible(true);
-		
+		f.setResizable(false);
 	}
 	
 	
