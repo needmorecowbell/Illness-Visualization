@@ -24,47 +24,13 @@ public class Driver {
 		// TODO Auto-generated method stub
 		System.out.println("IP: "+ip+"\nlocation: "+location);
 		
-		Image map = getMapVisualization(mapWidth,mapHeight);
-	
-		
-		MapCanvas m = new MapCanvas(map);
-		JFrame f = new JFrame();
-		f.add(m);
-		f.setTitle("Illness Visualization");
-		f.setSize(mapWidth,mapHeight);
-		f.setVisible(true);
-		f.setResizable(false);
+		IllnessVisApp app = new IllnessVisApp(mapWidth,mapHeight);
+
 	}
 	
 	
 	
-	public static Image getMapVisualization(int w, int h) {
-		// TODO Auto-generated method stub
-		URL getMap;
-		String url= "https://maps.googleapis.com/maps/api/staticmap?"+
-					"center=Brooklyn+Bridge,New+York,NY"+
-					"&zoom=13&size="+w+"x"+h+
-					"&maptype=roadmap"+
-					"&markers=color:blue%7Clabel:C%7C40.702147,-74.015794"+
-					"&markers=color:green%7Clabel:G%7C40.711614,-74.012318"+
-					"&markers=color:red%7Clabel:F%7C40.718217,-73.998284"+
-					"&key=AIzaSyBAZVe92yfAucFt2DiqqvsiTEJaBfVYcX4";
-		Image map=null;
-		try {
-			getMap = new URL(url);
-			map = ImageIO.read(getMap);
-			
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 
-		
-		return map;
-	}
+	
 	
 	
 	public static String getExternalIP() {
